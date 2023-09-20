@@ -11,6 +11,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding: FragmentMainBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        binding.addNote.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.container, RefactorFragment())
+                .commit()
+        }
     }
 }

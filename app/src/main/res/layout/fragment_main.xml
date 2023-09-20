@@ -60,8 +60,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:background="?selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
         android:src="@drawable/icons"/>
 
 </FrameLayout>
