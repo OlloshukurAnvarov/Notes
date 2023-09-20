@@ -2,4 +2,5 @@
     <string name="app_name">Notes</string>
     <string name="dont_miss_anything">Don\'t miss anything</string>
     <string name="add_some_notes">add some notes...</string>
+    <string name="done">Done</string>
 </resources>
