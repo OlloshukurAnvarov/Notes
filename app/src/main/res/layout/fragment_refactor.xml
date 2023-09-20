@@ -23,16 +23,18 @@
                 android:id="@+id/button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:padding="16dp"
                 android:src="@drawable/arrow_back" />
 
-            <TextView
+            <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:gravity="center"
+                android:background="@null"
+                android:maxLength="15"
+                android:inputType="textCapSentences"
                 tools:text="Text note 21/09"
                 android:textColor="@color/black"
                 android:textSize="24sp"
@@ -44,12 +46,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
                 android:layout_margin="16dp"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:text="@string/done"
                 android:textColor="@color/deepBlue"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
 
         </androidx.cardview.widget.CardView>
 
@@ -66,11 +66,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
-            android:inputType="textCapSentences"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:background="@null"
-            android:isScrollContainer="true"
+            android:inputType="textCapSentences|textMultiLine"
             android:hint="@string/add_some_notes"/>
 
     </LinearLayout>
