@@ -21,7 +21,11 @@ class RefactorFragment : Fragment(R.layout.fragment_refactor) {
         var id = -1L
         if (arguments?.containsKey("id") == true)
             id = arguments?.getLong("id")!!
-
+        if (id != -1L) {
+            val note = database.noteDao().getNote(id)
+            nameEdt.setText(note.name)
+            noteEdt.setText(note.note)
+        }
         binding.buttonBack.setOnClickListener{
             parentFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
@@ -37,7 +41,11 @@ class RefactorFragment : Fragment(R.layout.fragment_refactor) {
             if (nameEdt.text.toString().isNullOrBlank()){
                 a = "Untitled"
             }
-            database.noteDao().addNote(Note(id = 0, name = a, note = noteEdt.text.toString()))
+            if (id != -1L){
+                database.noteDao().editNote(id, a, noteEdt.text.toString())
+            }
+            else
+                database.noteDao().addNote(Note(id = 0, name = a, note = noteEdt.text.toString()))
             parentFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .replace(R.id.container, MainFragment())
