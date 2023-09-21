@@ -48,8 +48,4 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        adapter.notifyDataSetChanged()
-    }
 }
