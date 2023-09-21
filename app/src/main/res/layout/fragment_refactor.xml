@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="?colorSecondary"
     android:orientation="vertical">
 
@@ -24,17 +24,18 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_margin="16dp"
                 android:background="@null"
-                android:maxLength="15"
-                android:inputType="textCapSentences"
-                tools:text="Text note 21/09"
+                android:gravity="center"
                 android:hint="Name"
+                android:inputType="textCapSentences"
+                android:maxLength="15"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Text note 21/09" />
+
             <ImageView
                 android:id="@+id/button_back"
                 android:layout_width="wrap_content"
@@ -67,12 +68,12 @@
             android:id="@+id/edit_note"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start"
-            android:textColor="@color/black"
-            android:textSize="20sp"
             android:background="@null"
+            android:gravity="start"
+            android:hint="@string/add_some_notes"
             android:inputType="textCapSentences|textMultiLine"
-            android:hint="@string/add_some_notes"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
