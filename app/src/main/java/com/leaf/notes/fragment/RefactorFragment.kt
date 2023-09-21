@@ -46,7 +46,8 @@ class RefactorFragment : Fragment(R.layout.fragment_refactor) {
             parentFragmentManager.beginTransaction().setReorderingAllowed(true)
                 .replace(R.id.container, MainFragment()).commit()
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     parentFragmentManager.beginTransaction().setReorderingAllowed(true)

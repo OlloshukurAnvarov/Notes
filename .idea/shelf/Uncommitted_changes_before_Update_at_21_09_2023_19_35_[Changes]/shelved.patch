@@ -1,0 +1,353 @@
+Index: app/src/main/res/layout/fragment_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_main.xml b/app/src/main/res/layout/fragment_main.xml
+--- a/app/src/main/res/layout/fragment_main.xml	
++++ b/app/src/main/res/layout/fragment_main.xml	
+@@ -1,55 +1,55 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    xmlns:tools="http://schemas.android.com/tools">
++    android:layout_height="match_parent">
+ 
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+ 
+-    <LinearLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:orientation="vertical">
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
+ 
+-        <TextView
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginHorizontal="16dp"
+-            android:layout_marginTop="16dp"
+-            android:fontFamily="sans-serif-condensed"
+-            android:text="@string/app_name"
+-            android:textColor="#E63F51B5"
+-            android:textSize="32sp"
+-            android:textStyle="bold" />
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="16dp"
++                android:layout_marginTop="16dp"
++                android:fontFamily="sans-serif-condensed"
++                android:text="@string/app_name"
++                android:textColor="#E63F51B5"
++                android:textSize="32sp"
++                android:textStyle="bold" />
+ 
+-        <TextView
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginHorizontal="16dp"
+-            android:fontFamily="sans-serif-condensed"
+-            android:text="@string/dont_miss_anything"
+-            android:textStyle="bold" />
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="16dp"
++                android:fontFamily="sans-serif-condensed"
++                android:text="@string/dont_miss_anything"
++                android:textStyle="bold" />
+ 
+-    </LinearLayout>
++        </LinearLayout>
+ 
+-    <LinearLayout
+-        android:layout_marginVertical="4dp"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:orientation="vertical">
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:layout_marginVertical="4dp"
++            android:orientation="vertical">
+ 
+-        <androidx.recyclerview.widget.RecyclerView
+-            android:id="@+id/recycler"
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            tools:listitem="@layout/item_notes"
+-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
++            <androidx.recyclerview.widget.RecyclerView
++                android:id="@+id/recycler"
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
++                tools:listitem="@layout/item_notes" />
+ 
+-    </LinearLayout>
++        </LinearLayout>
+ 
+     </LinearLayout>
+ 
+@@ -60,6 +60,6 @@
+         android:layout_gravity="bottom|end"
+         android:layout_margin="16dp"
+         android:background="?selectableItemBackground"
+-        android:src="@drawable/icons"/>
++        android:src="@drawable/icons" />
+ 
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	
++++ b/app/src/main/res/layout/activity_main.xml	
+@@ -4,5 +4,4 @@
+     android:id="@+id/container"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivity"
+-    />
+\ No newline at end of file
++    tools:context=".MainActivity" />
+Index: app/src/main/java/com/leaf/notes/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/MainActivity.kt b/app/src/main/java/com/leaf/notes/MainActivity.kt
+--- a/app/src/main/java/com/leaf/notes/MainActivity.kt	
++++ b/app/src/main/java/com/leaf/notes/MainActivity.kt	
+@@ -9,9 +9,7 @@
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
+-        supportFragmentManager.beginTransaction()
+-            .setReorderingAllowed(true)
+-            .replace(R.id.container, MainFragment())
+-            .commit()
++        supportFragmentManager.beginTransaction().setReorderingAllowed(true)
++            .replace(R.id.container, MainFragment()).commit()
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/leaf/notes/extensions/View.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/extensions/View.kt b/app/src/main/java/com/leaf/notes/extensions/View.kt
+--- a/app/src/main/java/com/leaf/notes/extensions/View.kt	
++++ b/app/src/main/java/com/leaf/notes/extensions/View.kt	
+@@ -4,4 +4,4 @@
+ import android.view.View
+ import android.view.ViewGroup
+ 
+-fun ViewGroup.inflate(resId: Int) : View = LayoutInflater.from(context).inflate(resId, this, false)
+\ No newline at end of file
++fun ViewGroup.inflate(resId: Int): View = LayoutInflater.from(context).inflate(resId, this, false)
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_refactor.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_refactor.xml b/app/src/main/res/layout/fragment_refactor.xml
+--- a/app/src/main/res/layout/fragment_refactor.xml	
++++ b/app/src/main/res/layout/fragment_refactor.xml	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    xmlns:tools="http://schemas.android.com/tools"
+     android:background="?colorSecondary"
+     android:orientation="vertical">
+ 
+@@ -24,17 +24,18 @@
+                 android:id="@+id/name"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+-                android:layout_margin="16dp"
+-                android:gravity="center"
+                 android:layout_gravity="center"
++                android:layout_margin="16dp"
+                 android:background="@null"
++                android:gravity="center"
++                android:hint="Name"
++                android:inputType="textCapSentences"
+                 android:maxLength="15"
+-                android:inputType="textCapSentences"
+-                tools:text="Text note 21/09"
+-                android:hint="Name"
+                 android:textColor="@color/black"
+                 android:textSize="24sp"
+-                android:textStyle="bold" />
++                android:textStyle="bold"
++                tools:text="Text note 21/09" />
++
+             <ImageView
+                 android:id="@+id/button_back"
+                 android:layout_width="wrap_content"
+@@ -67,12 +68,12 @@
+             android:id="@+id/edit_note"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
++            android:background="@null"
+             android:gravity="start"
++            android:hint="@string/add_some_notes"
++            android:inputType="textCapSentences|textMultiLine"
+             android:textColor="@color/black"
+-            android:textSize="20sp"
+-            android:background="@null"
+-            android:inputType="textCapSentences|textMultiLine"
+-            android:hint="@string/add_some_notes"/>
++            android:textSize="20sp" />
+ 
+     </LinearLayout>
+ 
+Index: app/src/main/java/com/leaf/notes/fragment/MainFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/fragment/MainFragment.kt b/app/src/main/java/com/leaf/notes/fragment/MainFragment.kt
+--- a/app/src/main/java/com/leaf/notes/fragment/MainFragment.kt	
++++ b/app/src/main/java/com/leaf/notes/fragment/MainFragment.kt	
+@@ -14,37 +14,33 @@
+ 
+ class MainFragment : Fragment(R.layout.fragment_main) {
+     private val binding: FragmentMainBinding by viewBinding()
+-    private lateinit var data : ArrayList<Note>
++    private lateinit var data: ArrayList<Note>
+     private val adapter by lazy { NoteAdapter(data) }
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+         val database = DataBase.getData(requireContext())
+         data = ArrayList()
+         binding.addNote.setOnClickListener {
+-            parentFragmentManager.beginTransaction()
+-                .setReorderingAllowed(true)
+-                .replace(R.id.container, RefactorFragment())
+-                .commit()
++            parentFragmentManager.beginTransaction().setReorderingAllowed(true)
++                .replace(R.id.container, RefactorFragment()).commit()
+         }
+         data = database.noteDao().notes() as ArrayList<Note>
+         binding.recycler.adapter = adapter
+ 
+         adapter.setOnClickListener { i ->
+-            parentFragmentManager.beginTransaction()
+-                .setReorderingAllowed(true)
++            parentFragmentManager.beginTransaction().setReorderingAllowed(true)
+                 .replace(R.id.container, RefactorFragment::class.java, bundleOf("id" to data[i].id))
+                 .commit()
+         }
+         adapter.setOnLongClickListener { i ->
+-            val pDialog = SweetAlertDialog(requireContext(), SweetAlertDialog.WARNING_TYPE)
+-                .setTitleText("Are you sure?")
+-                .setContentText("Won't be able to recover this file!")
+-                .setConfirmButton("Yes,delete it!"){
++            val pDialog = SweetAlertDialog(
++                requireContext(), SweetAlertDialog.WARNING_TYPE
++            ).setTitleText("Are you sure?").setContentText("Won't be able to recover this file!")
++                .setConfirmButton("Yes,delete it!") {
+                     database.noteDao().deleteNote(data[i].id)
+                     data.removeAt(i)
+                     adapter.notifyItemRemoved(i)
+                     it.cancel()
+-                }
+-                .show()
++                }.show()
+         }
+     }
+ 
+Index: app/src/main/java/com/leaf/notes/fragment/RefactorFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/fragment/RefactorFragment.kt b/app/src/main/java/com/leaf/notes/fragment/RefactorFragment.kt
+--- a/app/src/main/java/com/leaf/notes/fragment/RefactorFragment.kt	
++++ b/app/src/main/java/com/leaf/notes/fragment/RefactorFragment.kt	
+@@ -46,7 +46,8 @@
+             parentFragmentManager.beginTransaction().setReorderingAllowed(true)
+                 .replace(R.id.container, MainFragment()).commit()
+         }
+-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
++        requireActivity().onBackPressedDispatcher.addCallback(
++            viewLifecycleOwner,
+             object : OnBackPressedCallback(true) {
+                 override fun handleOnBackPressed() {
+                     parentFragmentManager.beginTransaction().setReorderingAllowed(true)
+Index: app/src/main/java/com/leaf/notes/model/Note.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/model/Note.kt b/app/src/main/java/com/leaf/notes/model/Note.kt
+--- a/app/src/main/java/com/leaf/notes/model/Note.kt	
++++ b/app/src/main/java/com/leaf/notes/model/Note.kt	
+@@ -5,8 +5,5 @@
+ 
+ @Entity("notes")
+ class Note(
+-    @PrimaryKey(true)
+-    val id: Long,
+-    val name: String,
+-    val note: String
++    @PrimaryKey(true) val id: Long, val name: String, val note: String
+ )
+\ No newline at end of file
+Index: app/src/main/java/com/leaf/notes/dao/NoteDao.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/dao/NoteDao.kt b/app/src/main/java/com/leaf/notes/dao/NoteDao.kt
+--- a/app/src/main/java/com/leaf/notes/dao/NoteDao.kt	
++++ b/app/src/main/java/com/leaf/notes/dao/NoteDao.kt	
+@@ -20,5 +20,5 @@
+     fun deleteNote(id: Long)
+ 
+     @Query("SELECT * FROM notes WHERE id = :id")
+-    fun getNote(id: Long) : Note
++    fun getNote(id: Long): Note
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/leaf/notes/database/DataBase.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/leaf/notes/database/DataBase.kt b/app/src/main/java/com/leaf/notes/database/DataBase.kt
+--- a/app/src/main/java/com/leaf/notes/database/DataBase.kt	
++++ b/app/src/main/java/com/leaf/notes/database/DataBase.kt	
+@@ -15,10 +15,9 @@
+         private lateinit var database: DataBase
+ 
+         fun getData(context: Context): DataBase {
+-            if (!::database.isInitialized)
+-                database = Room.databaseBuilder(context, DataBase::class.java, "Notes")
+-                    .allowMainThreadQueries()
+-                    .build()
++            if (!::database.isInitialized) database =
++                Room.databaseBuilder(context, DataBase::class.java, "Notes")
++                    .allowMainThreadQueries().build()
+             return database
+         }
+ 
