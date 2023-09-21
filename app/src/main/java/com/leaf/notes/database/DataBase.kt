@@ -16,7 +16,9 @@ abstract class DataBase : RoomDatabase() {
 
         fun getData(context: Context): DataBase {
             if (!::database.isInitialized)
-                database = Room.databaseBuilder(context, DataBase::class.java, "Notes").build()
+                database = Room.databaseBuilder(context, DataBase::class.java, "Notes")
+                    .allowMainThreadQueries()
+                    .build()
             return database
         }
 
