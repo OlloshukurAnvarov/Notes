@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:paddingTop="16dp"
-    android:paddingHorizontal="16dp">
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -16,9 +16,9 @@
         app:cardElevation="8dp">
 
         <FrameLayout
+            android:id="@+id/noteLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/noteLayout"
             android:padding="16dp">
 
             <TextView
@@ -27,7 +27,13 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                tools:text="Something..."/>
+                tools:text="Something..." />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/baseline_insert_drive_file_24" />
 
         </FrameLayout>
 
@@ -38,12 +44,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:gravity="end"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/deepBlue"
         android:ellipsize="end"
+        android:gravity="end"
         android:maxLines="1"
-        tools:text="21/09"/>
+        android:textColor="@color/deepBlue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="21/09" />
 
 </LinearLayout>
