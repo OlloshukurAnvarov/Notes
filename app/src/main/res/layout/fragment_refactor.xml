@@ -19,12 +19,6 @@
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true">
 
-            <ImageView
-                android:id="@+id/button_back"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:src="@drawable/arrow_back" />
 
             <EditText
                 android:id="@+id/name"
@@ -32,13 +26,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:background="@null"
                 android:maxLength="15"
                 android:inputType="textCapSentences"
                 tools:text="Text note 21/09"
+                android:hint="Name"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:src="@drawable/arrow_back" />
 
             <TextView
                 android:id="@+id/button_done"

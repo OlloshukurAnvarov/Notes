@@ -1,7 +1,6 @@
 package com.leaf.notes.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.leaf.notes.model.Note
@@ -19,4 +18,7 @@ interface NoteDao {
 
     @Query("DELETE FROM notes WHERE id = :id")
     fun deleteNote(id: Long)
+
+    @Query("SELECT * FROM notes WHERE id = :id")
+    fun getNote(id: Long) : Note
 }

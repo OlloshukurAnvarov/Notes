@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.leaf.notes.R
 import com.leaf.notes.model.Note
 
-class NoteAdapter(val data: ArrayDeque<Note>) : RecyclerView.Adapter<NoteViewHolder>() {
+class NoteAdapter(private val data: ArrayList<Note>) : RecyclerView.Adapter<NoteViewHolder>() {
     private var onClickListener: ((Int) -> Unit)? = null
     private var onLongClickListener: ((Int) -> Unit)? = null
 
-    fun setOnEditClickListener(clickListener: (Int) -> Unit) {
+    fun setOnClickListener(clickListener: (Int) -> Unit) {
         onClickListener = clickListener
     }
-    fun setOnDeleteClickListener(clickListener: (Int) -> Unit) {
+    fun setOnLongClickListener(clickListener: (Int) -> Unit) {
         onLongClickListener = clickListener
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -28,14 +28,15 @@ class NoteAdapter(val data: ArrayDeque<Note>) : RecyclerView.Adapter<NoteViewHol
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) = holder.bind(data[position])
 }
-class NoteViewHolder(itemView: View,val onClickListener: ((Int) -> Unit)?, val onLongClickListener: ((Int) -> Unit)?) : RecyclerView.ViewHolder(itemView) {
+class NoteViewHolder(itemView: View,
+                     private val onClickListener: ((Int) -> Unit)?, private val onLongClickListener: ((Int) -> Unit)?) : RecyclerView.ViewHolder(itemView) {
     private val layout:FrameLayout = itemView.findViewById(R.id.noteLayout)
     private val date: TextView = itemView.findViewById(R.id.text_name)
     private val name: TextView = itemView.findViewById(R.id.text_note)
 
     fun bind(note: Note) {
-        date.setText(note.note)
-        name.setText(note.note)
+        date.text = "09/21"
+        name.text = note.name
         layout.setOnClickListener {
             onClickListener?.invoke(bindingAdapterPosition)
         }
