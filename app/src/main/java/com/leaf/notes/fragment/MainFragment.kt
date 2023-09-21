@@ -3,6 +3,7 @@ package com.leaf.notes.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import cn.pedant.SweetAlert.SweetAlertDialog
@@ -42,6 +43,17 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     adapter.notifyItemRemoved(i)
                     it.cancel()
                 }.show()
+        }
+        binding.search.addTextChangedListener {
+           if (it.toString().isNullOrEmpty()) {
+               data.clear()
+               data.addAll(database.noteDao().notes() as ArrayList<Note>)
+           }
+            else {
+                data.clear()
+               data.addAll(database.noteDao().getCertainNotes(it.toString()) as ArrayList<Note>)
+           }
+            adapter.notifyDataSetChanged()
         }
     }
 

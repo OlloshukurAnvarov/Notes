@@ -1,0 +1,39 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 0513ea0f7fa9b64886ab57a5b3cf3c4adfd35102)
++++ b/.idea/misc.xml	(date 1695305235612)
+@@ -1,7 +1,6 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>buildscript {\r\n    val agp_version by extra(\"8.0.2\")\r\n}\r\n// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nplugins {\r\n    id(\"com.android.application\") version \"8.0.2\" apply false\r\n    id(\"org.jetbrains.kotlin.android\") version \"1.8.0\" apply false\r\n    id(\"com.google.devtools.ksp\") version \"1.8.10-1.0.9\" apply false\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+--- a/build.gradle.kts	(revision 0513ea0f7fa9b64886ab57a5b3cf3c4adfd35102)
++++ b/build.gradle.kts	(date 1695240645177)
+@@ -3,7 +3,7 @@
+ }
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
+ plugins {
+-    id("com.android.application") version "8.0.2" apply false
++    id("com.android.application") version "8.1.1" apply false
+     id("org.jetbrains.kotlin.android") version "1.8.0" apply false
+     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+ }
+\ No newline at end of file
