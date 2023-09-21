@@ -45,6 +45,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_notes"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
