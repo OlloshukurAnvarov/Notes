@@ -12,6 +12,7 @@ import com.leaf.notes.adapter.NoteAdapter
 import com.leaf.notes.database.DataBase
 import com.leaf.notes.databinding.FragmentMainBinding
 import com.leaf.notes.model.Note
+import java.util.Collections
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding: FragmentMainBinding by viewBinding()
@@ -26,6 +27,20 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
         data = database.noteDao().notes() as ArrayList<Note>
         binding.recycler.adapter = adapter
+        binding.sortMode.setOnClickListener {
+            if (binding.sortMode.text.toString() == "DATE") {
+                binding.sortMode.setText("MODE")
+                data.clear()
+                data.addAll(database.noteDao().notes() as ArrayList<Note>)
+            }
+            else {
+                binding.sortMode.setText("DATE")
+                data.clear()
+                data.addAll(database.noteDao().notes() as ArrayList<Note>)
+                data.reverse()
+            }
+            adapter.notifyDataSetChanged()
+        }
 
         adapter.setOnClickListener { i ->
             parentFragmentManager.beginTransaction().setReorderingAllowed(true)
