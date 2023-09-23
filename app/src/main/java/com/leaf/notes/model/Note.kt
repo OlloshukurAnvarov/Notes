@@ -5,8 +5,5 @@ import androidx.room.PrimaryKey
 
 @Entity("notes")
 class Note(
-    @PrimaryKey(true)
-    val id: Long,
-    val name: String,
-    val note: String
+    @PrimaryKey(true) val id: Long, val name: String, val note: String
 )

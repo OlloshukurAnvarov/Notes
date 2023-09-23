@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,44 +12,89 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/app_name"
-            android:textColor="#E63F51B5"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/app_name"
+                android:textColor="#E63F51B5"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/dont_miss_anything"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_stroke"
+            android:hint="Search"
+            android:paddingLeft="10dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/dont_miss_anything"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:paddingTop="27dp"
+            android:layout_marginEnd="16dp"
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort by:"
+                android:textColor="?colorSecondary"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MODE"
+                android:textColor="#000000"
+                android:id="@+id/sortMode"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginVertical="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_notes"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="4dp"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_notes" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -60,6 +105,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:background="?selectableItemBackground"
-        android:src="@drawable/icons"/>
+        android:src="@drawable/icons" />
 
 </FrameLayout>
