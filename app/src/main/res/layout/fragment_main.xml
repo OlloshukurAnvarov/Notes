@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginTop="8dp">
 
             <EditText
                 android:id="@+id/search"
@@ -100,7 +100,6 @@
         android:layout_height="80dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:background="?selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/icons" />
