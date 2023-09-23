@@ -43,7 +43,7 @@ class NoteViewHolder(
 
     fun bind(note: Note) {
         date.text = "21/09"
-        name.text = note.name
+        name.text = note.note
         layout.setOnClickListener {
             onClickListener?.invoke(bindingAdapterPosition)
         }
