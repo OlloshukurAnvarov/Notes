@@ -12,7 +12,6 @@ import com.leaf.notes.adapter.NoteAdapter
 import com.leaf.notes.database.DataBase
 import com.leaf.notes.databinding.FragmentMainBinding
 import com.leaf.notes.model.Note
-import java.util.Collections
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding: FragmentMainBinding by viewBinding()

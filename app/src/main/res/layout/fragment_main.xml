@@ -10,12 +10,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -40,50 +36,25 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/edt_stroke"
-            android:hint="Search"
-            android:paddingLeft="10dp" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="27dp"
-            android:layout_marginEnd="16dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sort by:"
-                android:textColor="?colorSecondary"
-                android:textStyle="bold" />
-            <TextView
+            <EditText
+                android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MODE"
-                android:textColor="#000000"
-                android:id="@+id/sortMode"
-                android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                />
-        </LinearLayout>
-
+                android:background="@drawable/edt_stroke"
+                android:hint="Search"
+                android:padding="16dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="4dp"
             android:orientation="vertical">
 
@@ -98,6 +69,31 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:layout_gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort by:"
+            android:textColor="?colorSecondary"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/sortMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MODE"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/add_note"
         android:layout_width="80dp"
@@ -105,6 +101,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/icons" />
 
 </FrameLayout>
