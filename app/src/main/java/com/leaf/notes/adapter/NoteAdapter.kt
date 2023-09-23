@@ -42,7 +42,7 @@ class NoteViewHolder(
     private val name: TextView = itemView.findViewById(R.id.text_note)
 
     fun bind(note: Note) {
-        date.text = "21/09"
+        date.text = "23/09"
         name.text = note.note
         layout.setOnClickListener {
             onClickListener?.invoke(bindingAdapterPosition)
