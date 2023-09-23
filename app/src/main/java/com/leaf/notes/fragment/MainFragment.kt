@@ -31,8 +31,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.sortMode.setText("MODE")
                 data.clear()
                 data.addAll(database.noteDao().notes() as ArrayList<Note>)
-            }
-            else {
+            } else {
                 binding.sortMode.setText("DATE")
                 data.clear()
                 data.addAll(database.noteDao().notes() as ArrayList<Note>)
@@ -59,14 +58,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }.show()
         }
         binding.search.addTextChangedListener {
-           if (it.toString().isNullOrEmpty()) {
-               data.clear()
-               data.addAll(database.noteDao().notes() as ArrayList<Note>)
-           }
-            else {
+            if (it.toString().isNullOrEmpty()) {
                 data.clear()
-               data.addAll(database.noteDao().getCertainNotes(it.toString()) as ArrayList<Note>)
-           }
+                data.addAll(database.noteDao().notes() as ArrayList<Note>)
+            } else {
+                data.clear()
+                data.addAll(database.noteDao().getCertainNotes(it.toString()) as ArrayList<Note>)
+            }
             adapter.notifyDataSetChanged()
         }
     }
