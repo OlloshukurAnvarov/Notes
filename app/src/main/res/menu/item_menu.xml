@@ -7,6 +7,6 @@
         android:id="@+id/muhimlik"
         android:title="Important" />
     <item
-        android:id="@+id/delete"
+        android:id="@+id/delete12"
         android:title="Delete"/>
 </menu>

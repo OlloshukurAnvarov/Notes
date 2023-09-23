@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/vary" android:title="Very important"/>
+<item android:id="@+id/important" android:title="Important"/>
+<item android:id="@+id/not" android:title="Not important"/>
+</menu>
