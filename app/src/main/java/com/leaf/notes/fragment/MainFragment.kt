@@ -13,7 +13,7 @@ import com.leaf.notes.database.DataBase
 import com.leaf.notes.databinding.FragmentMainBinding
 import com.leaf.notes.model.Note
 
-class MainFragment : Fragment(R.layout.fragment_main) {
+class   MainFragment : Fragment(R.layout.fragment_main) {
     private val binding: FragmentMainBinding by viewBinding()
     private lateinit var data: ArrayList<Note>
     private val adapter by lazy { NoteAdapter(data) }
