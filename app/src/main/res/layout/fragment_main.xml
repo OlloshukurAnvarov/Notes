@@ -55,14 +55,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="4dp"
-            android:orientation="vertical">
+            android:layout_marginVertical="4dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
                 tools:listitem="@layout/item_notes" />
 
         </LinearLayout>
@@ -96,12 +96,10 @@
 
     <ImageView
         android:id="@+id/add_note"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:clickable="true"
-        android:focusable="true"
         android:src="@drawable/icons" />
 
 </FrameLayout>
