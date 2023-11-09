@@ -47,7 +47,7 @@
         android:ellipsize="end"
         android:gravity="end"
         android:maxLines="1"
-        android:textColor="@color/deepBlue"
+        android:textColor="?colorSecondary"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text="21/09" />

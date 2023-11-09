@@ -2,6 +2,7 @@ package com.leaf.notes.fragment
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -13,7 +14,7 @@ import com.leaf.notes.database.DataBase
 import com.leaf.notes.databinding.FragmentMainBinding
 import com.leaf.notes.model.Note
 
-class   MainFragment : Fragment(R.layout.fragment_main) {
+class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding: FragmentMainBinding by viewBinding()
     private lateinit var data: ArrayList<Note>
     private val adapter by lazy { NoteAdapter(data) }
@@ -68,5 +69,4 @@ class   MainFragment : Fragment(R.layout.fragment_main) {
             adapter.notifyDataSetChanged()
         }
     }
-
 }

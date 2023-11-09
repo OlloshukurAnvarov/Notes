@@ -4,9 +4,6 @@
         android:id="@+id/bildirishnoma"
         android:title="Notification" />
     <item
-        android:id="@+id/muhimlik"
-        android:title="Important" />
-    <item
         android:id="@+id/delete12"
         android:title="Delete"/>
 </menu>

@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@color/white"
+            android:backgroundTint="?colorOnPrimary"
             app:cardCornerRadius="8dp"
             app:cardUseCompatPadding="true">
 
@@ -31,7 +31,8 @@
                 android:hint="Name"
                 android:inputType="textCapSentences"
                 android:maxLength="15"
-                android:textColor="@color/black"
+                android:textColorHint="?colorSecondaryVariant"
+                android:textColor="?colorSecondaryVariant"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="Text note 21/09" />
@@ -50,7 +51,7 @@
                 android:layout_gravity="end|center"
                 android:layout_margin="16dp"
                 android:text="@string/done"
-                android:textColor="@color/deepBlue"
+                android:textColor="?colorSecondaryVariant"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -69,10 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:textColorHint="?colorSecondaryVariant"
             android:gravity="start"
             android:hint="@string/add_some_notes"
             android:inputType="textCapSentences|textMultiLine"
-            android:textColor="@color/black"
+            android:textColor="?colorSecondaryVariant"
             android:textSize="20sp" />
 
     </LinearLayout>
